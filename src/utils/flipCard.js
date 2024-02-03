@@ -33,19 +33,16 @@ export default function flipCard(cardsDiv, missCounter){
 
             setTimeout(() => {
                 if (document.querySelectorAll('.found').length === 16) {
-                    setTimeout(() => {
                         renderWin(missCounter, cardsDiv);
-                    }, 1000)
                 }
-                console.log(document.querySelectorAll('.found').length)
-            }, 1002)
+            }, 1010)
         })
     })
 }
 
 
 
-function checkeCards(missCounter, card, cardsDiv) {
+function checkeCards(missCounter, card) {
             
     card.style.transform = 'rotateY(180deg)';
     card.classList.add('flipped');

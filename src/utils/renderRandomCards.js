@@ -4,5 +4,6 @@ export default function renderRandomCards(cardsArray, frontCardsArray, divArray)
     frontCardsArray.forEach((htmlCard, i) =>{
         htmlCard.src = `${randomCards[i][1]}`;
         divArray[i].setAttribute('identifier', `${cardsArray[i][0]}`);
+        divArray[i].setAttribute('id', `${cardsArray[i][2]}`);
     })
 }

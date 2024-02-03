@@ -12,60 +12,80 @@ export default function flipCard(cardsDiv, missCounter){
     misses = 0;
     moves = 0;
     cardFlipCounter = 0;
-    pickedCard = '';
+    pickedCard = [];
 
     cardsDiv.forEach((card) =>{
      
         card.addEventListener('click', () => {
+
             cardFlipCounter ++;
-            
-            card.style.transform = 'rotateY(180deg)';
-            card.classList.add('flipped');
-            
-            if (cardFlipCounter === 2 && pickedCard !== card.attributes.identifier.nodeValue) {
-                const flippedCards = document.querySelectorAll('.flipped');
 
-                misses = misses + 1;
-                moves = moves + 1;
-
-                console.log('current moves: ', moves);
-                console.log('current misses: ', misses);
-                
-                setTimeout(() => {
-                    flippedCards.forEach((flippedCard) => {
-                            flippedCard.style.transform = '';
-                            flippedCard.classList.remove('flipped');
-                            missCounter.innerText = `Missed flips: ${misses}`;
-                            cardFlipCounter = 0;
-                        })
-                }, 1000)
-            }
-            else if (cardFlipCounter === 2 && pickedCard === card.attributes.identifier.nodeValue) {
-                const flippedCards = document.querySelectorAll('.flipped');
-
-                moves = moves + 1;
-
-                console.log('current moves: ', moves);
-
-                    flippedCards.forEach((flippedCard) => {
-                    setTimeout(() => {
-                        flippedCard.classList.add('found');
-                        flippedCard.classList.remove('flipped');
-                        flippedCard.style.transform = '';
-                    }, 500);
-                    cardFlipCounter = 0;
+            if (cardFlipCounter === 2) {
+                cardsDiv.forEach((card) => {
+                    card.removeEventListener('click', () => {
+                        card.style.transform = 'rotateY(180deg)';
+                        card.classList.add('flipped');
+                    })
                 })
-
-                setTimeout(() => {
-                    renderWin(missCounter, cardsDiv);
-                    console.log('misses: ', `${misses}`);
-                    console.log('all moves: ', `${moves}`);
-                }, 1001)
             }
-            pickedCard = card.attributes.identifier.nodeValue;
+
+            checkeCards(missCounter, card, cardsDiv);
         })
     })
 }
+
+
+
+function checkeCards(missCounter, card, cardsDiv) {
+            
+    card.style.transform = 'rotateY(180deg)';
+    card.classList.add('flipped');
+
+    const flippedCards = document.querySelectorAll('.flipped');
+
+    if (cardFlipCounter === 2 && pickedCard.value !== card.attributes.identifier.nodeValue 
+        || cardFlipCounter === 2 && pickedCard.id === card.id && pickedCard.value !== card.attributes.identifier.nodeValue 
+        || cardFlipCounter === 2 && pickedCard.value === card.attributes.identifier.nodeValue && pickedCard.id === card.id) {
+
+        misses = misses + 1;
+        moves = moves + 1;
+
+        
+        setTimeout(() => {
+            flippedCards.forEach((flippedCard) => {
+                    flippedCard.style.transform = '';
+                    flippedCard.classList.remove('flipped');
+                    missCounter.innerText = `Missed flips: ${misses}`;
+                })
+            }, 1000)
+            cardFlipCounter = 0;
+    }
+    else if (cardFlipCounter === 2 && pickedCard.value === card.attributes.identifier.nodeValue && pickedCard.id !== card.id) {
+
+        moves = moves + 1;
+
+
+        flippedCards.forEach((flippedCard) => {
+            setTimeout(() => {
+                flippedCard.classList.add('found');
+                flippedCard.classList.remove('flipped');
+                flippedCard.style.transform = '';
+            }, 1050);
+            cardFlipCounter = 0;
+        })
+
+        setTimeout(() => {
+            renderWin(missCounter, cardsDiv);
+        }, 1001)
+    }    
+    console.log('pickedCard:');
+    console.log(pickedCard.value, pickedCard.id);
+    pickedCard.value = card.attributes.identifier.nodeValue;
+    pickedCard.id = card.id;
+    console.log(card.attributes.identifier.nodeValue, card.id);
+}
+
+
 
 function renderWin(missCounter, cards){
 

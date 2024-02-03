@@ -30,6 +30,15 @@ export default function flipCard(cardsDiv, missCounter){
             }
 
             checkeCards(missCounter, card, cardsDiv);
+
+            setTimeout(() => {
+                if (document.querySelectorAll('.found').length === 16) {
+                    setTimeout(() => {
+                        renderWin(missCounter, cardsDiv);
+                    }, 1000)
+                }
+                console.log(document.querySelectorAll('.found').length)
+            }, 1002)
         })
     })
 }
@@ -70,19 +79,13 @@ function checkeCards(missCounter, card, cardsDiv) {
                 flippedCard.classList.add('found');
                 flippedCard.classList.remove('flipped');
                 flippedCard.style.transform = '';
-            }, 1050);
+            }, 1000);
             cardFlipCounter = 0;
         })
 
-        setTimeout(() => {
-            renderWin(missCounter, cardsDiv);
-        }, 1001)
-    }    
-    console.log('pickedCard:');
-    console.log(pickedCard.value, pickedCard.id);
+    }
     pickedCard.value = card.attributes.identifier.nodeValue;
     pickedCard.id = card.id;
-    console.log(card.attributes.identifier.nodeValue, card.id);
 }
 
 

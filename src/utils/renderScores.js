@@ -5,9 +5,10 @@ export default async function renderScorers(tableBody){
     let scores;
 
     try{
-        scores = await getScores()
+        scores = await getScores();
     } catch (e){
-        alert('The scores can not be rendered, because the server is not respondig.')
+        alert('The scores can not be rendered, because the server is not respondig.');
+        scores = [];
     }
 
     scores.forEach((score) => {

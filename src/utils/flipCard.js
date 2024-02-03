@@ -5,7 +5,7 @@ import restartGameAndSave from "./restartAndSave.js";
 let misses;
 let moves;
 let cardFlipCounter;
-let pickedCard;
+let pickedCard = [];
 
 export default function flipCard(cardsDiv, missCounter){
 

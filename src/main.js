@@ -8,8 +8,8 @@ const frontCards = document.querySelectorAll('.front-card');
 const missedCounter = document.querySelector('.counter');
 const scoreTable = document.querySelector('tbody');
 
+renderScorers(scoreTable);
+
 renderRandomCards(cards, frontCards, cardsDiv);
 
 flipCard(cardsDiv, missedCounter);
-
-renderScorers(scoreTable);

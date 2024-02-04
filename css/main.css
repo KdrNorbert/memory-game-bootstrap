@@ -1,10 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 *{
     padding: 0;
     margin: 0;
-    color: white;
     box-sizing: border-box;
     font-family: 'Times New Roman', Times, serif;
 }
-body{
-    background-color: #242424;
+.card{    
+    transform-style: preserve-3d;
+    transition: transform 1s ease;
 }
+.card .front-card {
+    transform: rotateY(180deg);
+}
+.card .side {
+    backface-visibility: hidden;
+    border-radius: 10px;
+  }  

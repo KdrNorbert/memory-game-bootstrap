@@ -5,101 +5,102 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="./src/main.js" type="module" defer></script>
     <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/header.css">
-    <link rel="stylesheet" href="./css/gameAera.css">
-    <link rel="stylesheet" href="./css/footer.css">
-    <link rel="stylesheet" href="./css/win.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="shortcut icon" href="./img/logo.png" type="image/x-icon">
     <title>Norbi Memory Game</title>
 </head>
-<body>
+<body class="bg-[#242424] text-white">
 
-    <header>
-        <div class="title">
-            <img src="./img/logo.png" alt="logo" id="logo">
+    <header class="flex flex-row h-15 w-4/6 my-5 mx-auto items-center justify-between">
+        <div class="title flex flex-none items-center font-bold text-2xl">
+            <img src="./img/logo.png" alt="logo" id="logo" class="w-10 pr-3">
             Memory Game
-        </div>
-        <div class="counter">Missed flips: 0</div>
+        </div class="flex-none">
+        <div class="counter flex-none font-bold text-xl">Missed flips: 0</div>
     </header>
 
-    <div class="game-win-container">
-        <div class="game-area">
-            <div class="card">
-                <img src="./img/back-cover.png" alt="back-cover" class="back-cover side">
-                <img src="" alt="front-card" class="front-card side">
+    <div class="game-win-container w-4/6 mx-auto h-screen my-10 py-10">
+        <div class="game-area w-5/6 h-full mx-auto grid grid-rows-4 grid-cols-4 gap-y-10 justify-items-center items-center">
+            <div class="card relative h-full w-5/6">
+                <img src="./img/back-cover.png" alt="back-cover" class="back-cover side absolute h-full w-full">
+                <img src="" alt="front-card" class="front-card side absolute flex items-center justify-between h-full w-full">
             </div>
-            <div class="card">
-                <img src="./img/back-cover.png" alt="back-cover" class="back-cover side">
-                <img src="" alt="front-card" class="front-card side">
+            <div class="card relative h-full w-5/6">
+                <img src="./img/back-cover.png" alt="back-cover" class="back-cover side absolute h-full w-full">
+                <img src="" alt="front-card" class="front-card side absolute flex items-center justify-between h-full w-full">
             </div>
-            <div class="card">
-                <img src="./img/back-cover.png" alt="back-cover" class="back-cover side">
-                <img src="" alt="front-card" class="front-card side">
+            <div class="card relative h-full w-5/6">
+                <img src="./img/back-cover.png" alt="back-cover" class="back-cover side absolute h-full w-full">
+                <img src="" alt="front-card" class="front-card side absolute flex items-center justify-between h-full w-full">
             </div>
-            <div class="card">
-                <img src="./img/back-cover.png" alt="back-cover" class="back-cover side">
-                <img src="" alt="front-card" class="front-card side">
+            <div class="card relative h-full w-5/6">
+                <img src="./img/back-cover.png" alt="back-cover" class="back-cover side absolute h-full w-full">
+                <img src="" alt="front-card" class="front-card side absolute flex items-center justify-between h-full w-full">
             </div>
-            <div class="card">
-                <img src="./img/back-cover.png" alt="back-cover" class="back-cover side">
-                <img src="" alt="front-card" class="front-card side">
+            <div class="card relative h-full w-5/6">
+                <img src="./img/back-cover.png" alt="back-cover" class="back-cover side absolute h-full w-full">
+                <img src="" alt="front-card" class="front-card side absolute flex items-center justify-between h-full w-full">
             </div>
-            <div class="card">
-                <img src="./img/back-cover.png" alt="back-cover" class="back-cover side">
-                <img src="" alt="front-card" class="front-card side">
+            <div class="card relative h-full w-5/6">
+                <img src="./img/back-cover.png" alt="back-cover" class="back-cover side absolute h-full w-full">
+                <img src="" alt="front-card" class="front-card side absolute flex items-center justify-between h-full w-full">
             </div>
-            <div class="card">
-                <img src="./img/back-cover.png" alt="back-cover" class="back-cover side">
-                <img src="" alt="front-card" class="front-card side">
+            <div class="card relative h-full w-5/6">
+                <img src="./img/back-cover.png" alt="back-cover" class="back-cover side absolute h-full w-full">
+                <img src="" alt="front-card" class="front-card side absolute flex items-center justify-between h-full w-full">
             </div>
-            <div class="card">
-                <img src="./img/back-cover.png" alt="back-cover" class="back-cover side">
-                <img src="" alt="front-card" class="front-card side">
+            <div class="card relative h-full w-5/6">
+                <img src="./img/back-cover.png" alt="back-cover" class="back-cover side absolute h-full w-full">
+                <img src="" alt="front-card" class="front-card side absolute flex items-center justify-between h-full w-full">
             </div>
-            <div class="card">
-                <img src="./img/back-cover.png" alt="back-cover" class="back-cover side">
-                <img src="" alt="front-card" class="front-card side">
+            <div class="card relative h-full w-5/6">
+                <img src="./img/back-cover.png" alt="back-cover" class="back-cover side absolute h-full w-full">
+                <img src="" alt="front-card" class="front-card side absolute flex items-center justify-between h-full w-full">
             </div>
-            <div class="card">
-                <img src="./img/back-cover.png" alt="back-cover" class="back-cover side">
-                <img src="" alt="front-card" class="front-card side">
+            <div class="card relative h-full w-5/6">
+                <img src="./img/back-cover.png" alt="back-cover" class="back-cover side absolute h-full w-full">
+                <img src="" alt="front-card" class="front-card side absolute flex items-center justify-between h-full w-full">
             </div>
-            <div class="card">
-                <img src="./img/back-cover.png" alt="back-cover" class="back-cover side">
-                <img src="" alt="front-card" class="front-card side">
+            <div class="card relative h-full w-5/6">
+                <img src="./img/back-cover.png" alt="back-cover" class="back-cover side absolute h-full w-full">
+                <img src="" alt="front-card" class="front-card side absolute flex items-center justify-between h-full w-full">
             </div>
-            <div class="card">
-                <img src="./img/back-cover.png" alt="back-cover" class="back-cover side">
-                <img src="" alt="front-card" class="front-card side">
+            <div class="card relative h-full w-5/6">
+                <img src="./img/back-cover.png" alt="back-cover" class="back-cover side absolute h-full w-full">
+                <img src="" alt="front-card" class="front-card side absolute flex items-center justify-between h-full w-full">
             </div>
-            <div class="card">
-                <img src="./img/back-cover.png" alt="back-cover" class="back-cover side">
-                <img src="" alt="front-card" class="front-card side">
+            <div class="card relative h-full w-5/6">
+                <img src="./img/back-cover.png" alt="back-cover" class="back-cover side absolute h-full w-full">
+                <img src="" alt="front-card" class="front-card side absolute flex items-center justify-between h-full w-full">
             </div>
-            <div class="card">
-                <img src="./img/back-cover.png" alt="back-cover" class="back-cover side">
-                <img src="" alt="front-card" class="front-card side">
+            <div class="card relative h-full w-5/6">
+                <img src="./img/back-cover.png" alt="back-cover" class="back-cover side absolute h-full w-full">
+                <img src="" alt="front-card" class="front-card side absolute flex items-center justify-between h-full w-full">
             </div>
-            <div class="card">
-                <img src="./img/back-cover.png" alt="back-cover" class="back-cover side">
-                <img src="" alt="front-card" class="front-card side">
+            <div class="card relative h-full w-5/6">
+                <img src="./img/back-cover.png" alt="back-cover" class="back-cover side absolute h-full w-full">
+                <img src="" alt="front-card" class="front-card side absolute flex items-center justify-between h-full w-full">
             </div>
-            <div class="card">
-                <img src="./img/back-cover.png" alt="back-cover" class="back-cover side">
-                <img src="" alt="front-card" class="front-card side">
+            <div class="card relative h-full w-5/6">
+                <img src="./img/back-cover.png" alt="back-cover" class="back-cover side absolute h-full w-full">
+                <img src="" alt="front-card" class="front-card side absolute flex items-center justify-between h-full w-full">
+            </div>
+            <div class="card relative h-full w-5/6">
+                <img src="./img/back-cover.png" alt="back-cover" class="back-cover side absolute h-full w-full">
+                <img src="" alt="front-card" class="front-card side absolute flex items-center justify-between h-full w-full">
             </div>
         </div>
     </div>
 
-    <footer>
-        <h2 id="score-board">Scoreboard</h2>
-        <table>
+    <footer class="w-1/2 mx-auto my-6 text-center">
+        <h2 id="score-board" class=" my-6 text-2xl font-bold underline">Scoreboard</h2>
+        <table class="mx-auto">
             <thead>
-                <tr>
-                    <th class="description">Date</th>
-                    <th class="description">Name</th>
-                    <th class="description">All flips</th>
-                    <th class="description">Missed flips</th>
+                <tr class="mx-5 p-10 text-lg text-center">
+                    <th class="bg-black text-center description p-3 pr-10 text-xl">Date</th>
+                    <th class="bg-black text-center description p-3 pr-10 text-xl divide-x border-x-2 border-solid divide-white">Name</th>
+                    <th class="bg-black text-center description p-3 pr-10 text-xl divide-x border-x-2 border-solid divide-white">All flips</th>
+                    <th class="bg-black text-center description p-3 pr-10 text-xl">Missed flips</th>
                 </tr>
             </thead>
             <tbody></tbody>
